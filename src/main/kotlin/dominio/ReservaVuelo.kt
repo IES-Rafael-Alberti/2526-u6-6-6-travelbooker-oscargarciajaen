@@ -2,7 +2,7 @@ package org.practicatrim2.Dominio
 
 import java.time.LocalDate
 
-class ReservaVuelo(
+class ReservaVuelo private constructor(
     val origen: String,
     val destino: String,
     val horaVuelo: String,
@@ -36,4 +36,9 @@ class ReservaVuelo(
                 return ReservaVuelo(origen, destino, horaVuelo, id, fechaCreacion, descripcion)
         }
     }
+
+    override fun toString(): String {
+        return detalle
+    }
+
 }
