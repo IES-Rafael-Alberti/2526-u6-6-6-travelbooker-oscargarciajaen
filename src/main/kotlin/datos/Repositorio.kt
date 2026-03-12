@@ -1,5 +1,9 @@
 package org.practicatrim2.datos
 
-class Repositorio<T> {
-    val respositorio: MutableMap<Int, T> = mutableMapOf()
+import org.practicatrim2.Dominio.Reserva
+
+class Repositorio() {
+    val reservasHotel: MutableMap<Int, Reserva> = mutableMapOf()
+
+    val reservasVuelo: MutableMap<Int, Reserva> = mutableMapOf()
 }
