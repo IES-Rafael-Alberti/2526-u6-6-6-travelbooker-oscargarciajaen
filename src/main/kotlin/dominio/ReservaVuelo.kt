@@ -15,14 +15,6 @@ class ReservaVuelo private constructor(
     override val detalle
         get() = "$id - $descripcion - $origen -> $destino [$horaVuelo] "
 
-    init {
-        require(
-            horaVuelo.length == 5 && horaVuelo.contains(":")
-                    && horaVuelo[0].isDigit() && horaVuelo[1].isDigit()
-                    && horaVuelo[3].isDigit() && horaVuelo[4].isDigit()
-        ) { "Hora del vuelo no válida" }
-    }
-
     companion object {
         private var contadorId = 0
 
