@@ -6,10 +6,14 @@ class ReservaVuelo private constructor(
     val origen: String,
     val destino: String,
     val horaVuelo: String,
-    override val id: Int = contadorId++,
     override val fechaCreacion: LocalDate = LocalDate.now(),
     override val descripcion: String
     ) : Reserva() {
+
+    override val id: Int = contadorId++
+
+    override val detalle
+        get() = "$id - $descripcion - $origen -> $destino [$horaVuelo] "
 
     init {
         require(
@@ -19,9 +23,6 @@ class ReservaVuelo private constructor(
         ) { "Hora del vuelo no válida" }
     }
 
-    override val detalle
-        get() = "$id - $descripcion - $origen -> $destino [$horaVuelo] "
-
     companion object {
         private var contadorId = 0
 
@@ -29,11 +30,10 @@ class ReservaVuelo private constructor(
             origen: String,
             destino: String,
             horaVuelo: String,
-            id: Int,
             fechaCreacion: LocalDate,
             descripcion: String
             ): ReservaVuelo {
-                return ReservaVuelo(origen, destino, horaVuelo, id, fechaCreacion, descripcion)
+                return ReservaVuelo(origen, destino, horaVuelo, fechaCreacion, descripcion)
         }
     }
 

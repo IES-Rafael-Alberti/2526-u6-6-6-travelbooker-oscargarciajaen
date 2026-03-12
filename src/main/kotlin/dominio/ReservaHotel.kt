@@ -5,10 +5,10 @@ import java.time.LocalDate
 class ReservaHotel private constructor(
     val ubicacion: String,
     val numeroNoches: Int,
-    override val id: Int = contadorId++,
     override val fechaCreacion: LocalDate = LocalDate.now(),
     override val descripcion: String,
 ): Reserva() {
+    override val id: Int = contadorId++
 
     override val detalle
         get() = "$id - $descripcion - $ubicacion ($numeroNoches)"
@@ -19,10 +19,9 @@ class ReservaHotel private constructor(
         fun crearInstancia(
             ubicacion: String,
             numeroNoches: Int,
-            id: Int,
             fechaCreacion: LocalDate,
             descripcion: String): ReservaHotel {
-            return ReservaHotel(ubicacion, numeroNoches, id, fechaCreacion, descripcion)
+            return ReservaHotel(ubicacion, numeroNoches, fechaCreacion, descripcion)
         }
     }
 
