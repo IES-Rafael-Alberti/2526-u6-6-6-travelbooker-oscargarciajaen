@@ -1,44 +1,46 @@
 package org.practicatrim2.presentacion
 
+import org.practicatrim2.Dominio.Reserva
 import java.time.LocalDate
 
 class Consola {
 
-    fun mostrarMenu(): String{
-        println("Elige una Opción 1 o 2")
-        println("1. Crear Reserva")
-        println("2. Mostrar Reserva")
-
-        var seleccion: String? = null
-
-        do {
-            print("\nTú opción -> ")
-            val entrada = readLine()
-            if (entrada != null && (entrada == "1" || entrada == "2") ) {
-                seleccion = entrada
-            }
-        } while(seleccion == null)
-        return seleccion
-    }
-
-    fun solicitarTipoReserva(): String{
-        println("\nSelecciona el tipo de reserva 1 o 2")
-        println("1. Reserva de Hotel")
-        println("2. Reserva de Vuelo")
-
-        var reserva: String? = null
-
-        do {
-            print("\nTú opción -> ")
-            val entrada = readLine()
-            if (entrada != null && (entrada == "1" || entrada == "2") ) {
-                reserva = entrada
-            }
-        } while(reserva == null)
-        return reserva
-    }
-
     companion object{
+
+        fun mostrarMenu(): String{
+            println("Elige una Opción 1, 2 o 3")
+            println("1. Crear Reserva")
+            println("2. Mostrar Reserva")
+            println("3. Salir")
+
+            var seleccion: String? = null
+
+            do {
+                print("\nTú opción -> ")
+                val entrada = readLine()
+                if (entrada != null && (entrada == "1" || entrada == "2" || entrada == "3") ) {
+                    seleccion = entrada
+                }
+            } while(seleccion == null)
+            return seleccion
+        }
+
+        fun solicitarTipoReserva(): String{
+            println("\nSelecciona el tipo de reserva 1 o 2")
+            println("1. Reserva de Hotel")
+            println("2. Reserva de Vuelo")
+
+            var reserva: String? = null
+
+            do {
+                print("\nTú opción -> ")
+                val entrada = readLine()
+                if (entrada != null && (entrada == "1" || entrada == "2") ) {
+                    reserva = entrada
+                }
+            } while(reserva == null)
+            return reserva
+        }
 
         fun solicitarUbicacion(): String{
             println("Introduzca la ubicación")
@@ -55,7 +57,7 @@ class Consola {
         }
 
         fun solicitarNumeroNoches(): Int{
-            println("Introduzca la ubicación")
+            println("Introduzca el número de noches")
             var numeroNoches: Int? = null
 
             do {
@@ -89,6 +91,66 @@ class Consola {
             return fechaFormateada
         }
 
-        fun solicitarDescripción
+        fun solicitarDescripción():String{
+            println("Introduzca una breve descripción")
+            var descripcion: String? = null
+
+            do {
+                print("\nTú respuesta -> ")
+                val entrada = readLine()
+                if (entrada != null && entrada.isNotEmpty()) {
+                    descripcion = entrada
+                }
+            } while(descripcion == null)
+            return descripcion
+        }
+
+        fun solicitarOrigen():String{
+            println("Introduzca el origen ")
+            var origen: String? = null
+
+            do {
+                print("\nTú origen -> ")
+                val entrada = readLine()
+                if (entrada != null && entrada.isNotEmpty()) {
+                    origen = entrada
+                }
+            } while(origen == null)
+            return origen
+        }
+
+        fun solicitarDestino():String{
+            println("Introduzca el origen ")
+            var destino: String? = null
+
+            do {
+                print("\nTú origen -> ")
+                val entrada = readLine()
+                if (entrada != null && entrada.isNotEmpty()) {
+                    destino = entrada
+                }
+            } while(destino == null)
+            return destino
+        }
+
+        fun solicitarHoraVuelo():String{
+            val regex = "/[0-2][0-9]:[0-5][0-9]".toRegex()
+
+            println("Introduzca el origen ")
+            var horaVuelo: String? = null
+
+            do {
+                print("\nTú origen -> ")
+                val entrada = readLine()
+                if (entrada != null && entrada.matches(regex)) {
+                    horaVuelo = entrada
+                }
+            } while(horaVuelo == null)
+            return horaVuelo
+        }
+
+        fun mostrarReserva(id:Int, reserva: Reserva){
+            println("$id -> $reserva")
+        }
     }
 }
