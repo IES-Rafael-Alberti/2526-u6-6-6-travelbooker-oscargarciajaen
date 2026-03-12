@@ -120,11 +120,11 @@ class Consola {
         }
 
         fun solicitarDestino():String{
-            println("Introduzca el origen ")
+            println("Introduzca el destino ")
             var destino: String? = null
 
             do {
-                print("\nTú origen -> ")
+                print("\nTú destino -> ")
                 val entrada = readLine()
                 if (entrada != null && entrada.isNotEmpty()) {
                     destino = entrada
@@ -134,13 +134,13 @@ class Consola {
         }
 
         fun solicitarHoraVuelo():String{
-            val regex = "/[0-2][0-9]:[0-5][0-9]".toRegex()
+            val regex = "[0-2][0-9]:[0-5][0-9]".toRegex()
 
-            println("Introduzca el origen ")
+            println("Introduzca la hora del vuelo ")
             var horaVuelo: String? = null
 
             do {
-                print("\nTú origen -> ")
+                print("\nLa hora -> ")
                 val entrada = readLine()
                 if (entrada != null && entrada.matches(regex)) {
                     horaVuelo = entrada
