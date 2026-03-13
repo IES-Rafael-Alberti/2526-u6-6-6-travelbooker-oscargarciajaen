@@ -139,6 +139,10 @@ Este conjunto de preguntas está diseñado para ayudarte a reflexionar sobre có
 #### **Criterio global 1: Instancia objetos y hacer uso de ellos**
 - **(2.a, 2.b, 2.c, 2.d, 2.f, 2.h, 4.e, 4.f)**: Describe cómo has instanciado y utilizado objetos en tu proyecto. ¿Cómo has aplicado los constructores y pasado parámetros a los métodos? Proporciona ejemplos específicos de tu código.
 
+He instanciado los objetos a traves de las funciones estáticas crearInstancia y los he almacenado en su correspondiente diccionario, he pasado los parámetros a traves de las funciones que solicitan dicho parámetro.
+
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/e8c36ab3c704c705a5b9b1a859d6c56849ac1663/src/main/kotlin/servicios/ReservaService.kt#L35-L56
+
 #### **Criterio global 2: Crear y llamar métodos estáticos**
 - **(4.h)**: ¿Has definido algún método/propiedad estático en tu proyecto? ¿Cuál era el objetivo y por qué consideraste que debía ser estático en lugar de un método/propiedad de instancia?
 
