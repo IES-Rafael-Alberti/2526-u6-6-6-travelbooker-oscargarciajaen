@@ -3,10 +3,21 @@ package org.practicatrim2.presentacion
 import org.practicatrim2.Dominio.Reserva
 import java.time.LocalDate
 
+/**
+ * Representa la consola.
+ */
 class Consola {
 
+    /**
+     * Contiene todos los métodos de la consola.
+     */
     companion object{
 
+        /**
+         * Muestra el menú y solicita una opción.
+         *
+         * @return Retorna la opción introducida por el usuario.
+         */
         fun mostrarMenu(): String{
             println("Elige una Opción 1, 2 o 3")
             println("1. Crear Reserva")
@@ -25,6 +36,11 @@ class Consola {
             return seleccion
         }
 
+        /**
+         * Solicita el tipo de reserva a realizar.
+         *
+         * @return Retorna el tipo de reserva seleccionado.
+         */
         fun solicitarTipoReserva(): String{
             println("\nSelecciona el tipo de reserva 1 o 2")
             println("1. Reserva de Hotel")
@@ -42,6 +58,11 @@ class Consola {
             return reserva
         }
 
+        /**
+         * Solicita la ubicacion.
+         *
+         * @return Retorna la ubicación proporcionada por el usuario.
+         */
         fun solicitarUbicacion(): String{
             println("Introduzca la ubicación")
             var ubicacion: String? = null
@@ -56,6 +77,11 @@ class Consola {
             return ubicacion
         }
 
+        /**
+         * Solicita el número de noches.
+         *
+         * @return Retorna el número de noches introducido por el usuario.
+         */
         fun solicitarNumeroNoches(): Int{
             println("Introduzca el número de noches")
             var numeroNoches: Int? = null
@@ -73,6 +99,11 @@ class Consola {
             return numeroNoches
         }
 
+        /**
+         * Solicitar fecha
+         *
+         * @return
+         */
         fun solicitarFecha(): LocalDate{
             println("Introduce la fecha en formato YYYY-MM-DD")
 
@@ -91,6 +122,11 @@ class Consola {
             return fechaFormateada
         }
 
+        /**
+         * Solicita una breve descripción.
+         *
+         * @return Retorna la descripción.
+         */
         fun solicitarDescripción():String{
             println("Introduzca una breve descripción")
             var descripcion: String? = null
@@ -105,6 +141,11 @@ class Consola {
             return descripcion
         }
 
+        /**
+         * Solicita la ciudad de origen.
+         *
+         * @return Retorna la ciudad introducida por el usuario.
+         */
         fun solicitarOrigen():String{
             println("Introduzca el origen ")
             var origen: String? = null
@@ -119,6 +160,11 @@ class Consola {
             return origen
         }
 
+        /**
+         * Solicita la ciudad de destino.
+         *
+         * @return Retorna la ciudad de destino introducida por el usuario.
+         */
         fun solicitarDestino():String{
             println("Introduzca el destino ")
             var destino: String? = null
@@ -133,6 +179,11 @@ class Consola {
             return destino
         }
 
+        /**
+         * Solicita la hora del vuelo.
+         *
+         * @return Retorna la hora introducida por el usuario.
+         */
         fun solicitarHoraVuelo():String{
             val regex = "[0-2][0-9]:[0-5][0-9]".toRegex()
 
@@ -149,8 +200,13 @@ class Consola {
             return horaVuelo
         }
 
-        fun mostrarReserva(id:Int, reserva: Reserva){
-            println("$id -> $reserva")
+        /**
+         * Muestra todas las reservas.
+         *
+         * @param reserva Objeto de la clase reserva.
+         */
+        fun mostrarReserva(reserva: Reserva){
+            println("$reserva")
         }
     }
 }
