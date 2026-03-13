@@ -3,7 +3,7 @@ package org.practicatrim2.Dominio
 import java.time.LocalDate
 
 /**
- * Reserva hotel
+ * Representa la reserva de un hotel.
  *
  * @property ubicacion Ubicación del hotel.
  * @property numeroNoches Número de noches de estancia en el hotel.
