@@ -14,14 +14,18 @@ import org.practicatrim2.presentacion.Consola
 class ReservaService (): IReservaRepository {
 
     /**
+     * Declaramos un repositorio de enteros.
+     */
+    val repositorio = Repositorio<Int>()
+    /**
      * Mapa para almacenar las reservas de los hoteles en formato [id:reserva]
      */
-    val reservasHoteles : MutableMap<Int, Reserva> = Repositorio().reservasHotel
+    val reservasHoteles : MutableMap<Int, Reserva> = repositorio.reservasHotel
 
     /**
      * Mapa para almacenar las reservas de los vuelos en formato [id:reserva]
      */
-    val reservasVuelos : MutableMap<Int, Reserva> = Repositorio().reservasVuelo
+    val reservasVuelos : MutableMap<Int, Reserva> = repositorio.reservasVuelo
 
     /**
      * Implementación de la función agregar
