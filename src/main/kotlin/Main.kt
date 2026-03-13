@@ -3,6 +3,9 @@ package org.practicatrim2
 import org.practicatrim2.presentacion.Consola
 import org.practicatrim2.servicios.ReservaService
 
+/**
+ * Función que se encarga del correcto funcionamiento del programa.
+ */
 fun main() {
 
     val servicioReservas = ReservaService()
