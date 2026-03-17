@@ -141,14 +141,14 @@ Este conjunto de preguntas está diseñado para ayudarte a reflexionar sobre có
 
 He instanciado los objetos a traves de las funciones estáticas crearInstancia y los he almacenado en su correspondiente diccionario, he pasado los parámetros a traves de las funciones que solicitan dicho parámetro.
 
---> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/e8c36ab3c704c705a5b9b1a859d6c56849ac1663/src/main/kotlin/servicios/ReservaService.kt#L35-L56
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/servicios/ReservaService.kt#L36-L57
 
 #### **Criterio global 2: Crear y llamar métodos estáticos**
 - **(4.h)**: ¿Has definido algún método/propiedad estático en tu proyecto? ¿Cuál era el objetivo y por qué consideraste que debía ser estático en lugar de un método/propiedad de instancia?
 
 Todos los métodos de la clase Consola son estáticos, el objetivo era no instanciar un objeto consola puesto a que no le encontraba el sentido a tener metodos de instancia ya que en mi programa no se iban a instanciar varias consolas.
 
-Métodos estáticos -> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/4b8f2bbe5d6478c6c6c094b24921b681e4a9ff64/src/main/kotlin/presentacion/Consola.kt#L14-L211
+Métodos estáticos -> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/presentacion/Consola.kt#L14-L189
 
 - **(2.e)**: ¿En qué parte del código se llama a un método estático o se utiliza la propiedad estática?
 
@@ -156,7 +156,7 @@ Se llaman a los métodos estáticos crearInstancia desde ReservaService y desde 
 
 Llamadas :
 
-ReservaService --> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/4b8f2bbe5d6478c6c6c094b24921b681e4a9ff64/src/main/kotlin/servicios/ReservaService.kt#L31-L52
+ReservaService --> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/servicios/ReservaService.kt#L36-L57
 
 Main --> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/4b8f2bbe5d6478c6c6c094b24921b681e4a9ff64/src/main/kotlin/Main.kt#L9-L25
 
@@ -183,9 +183,9 @@ Mi jerarquía de clases se basa en Reserva, una clase abstracta y ReservaHotel y
 #### **Criterio global 7: Librerías de clases**
 - **(2.g, 4.i)**: Describe cualquier librería externa que hayas incorporado en tu proyecto. Explica cómo y por qué las elegiste, y cómo las incorporaste en tu proyecto. ¿Cómo extendió la funcionalidad de tu aplicación? Proporciona ejemplos específicos de su uso en tu proyecto.
 
-Java LocalDate es una librería que te permite usar las fechas. La escogí porque necesitaba la fecha de los vuelos y reservas, la incorpore solicitandola y luego parseandola para convertirlo en un objeto LocalDate.
+Java LocalDate es una librería que te permite usar las fechas. La escogí porque necesitaba la fecha de los vuelos y reservas, la incorpore obteniendo asi la fecha de instancia del objeto.
 
---> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/62f770ae254f62489457c4defa426e3515409f96/src/main/kotlin/presentacion/Consola.kt#L102-L123
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/servicios/ReservaService.kt#L49
 
 #### **Criterio global 8: Documentado**
 - **(7.h)**: Muestra ejemplos de cómo has documentado y comentado tu código. ¿Que herramientas has utilizado? ¿Cómo aseguras que tu documentación aporte valor para la comprensión, mantenimiento y depuración del código?
@@ -205,8 +205,6 @@ La clase genérica me permite darle cualquier clave a mi diccionario sin preocup
 - **(6.g)**: Muestra ejemplos de tu código donde hayas utilizado las expresiones regulares. ¿Qué beneficio has obtenido?
 
 Me permiten validar las entradas por teclado de una forma más eficiente y rápida que con condicionales normales.
-
---> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/62f770ae254f62489457c4defa426e3515409f96/src/main/kotlin/presentacion/Consola.kt#L107-L123
 
 --> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/62f770ae254f62489457c4defa426e3515409f96/src/main/kotlin/presentacion/Consola.kt#L187-L201
 
