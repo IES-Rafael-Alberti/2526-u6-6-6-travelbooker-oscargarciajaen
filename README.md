@@ -139,31 +139,74 @@ Este conjunto de preguntas está diseñado para ayudarte a reflexionar sobre có
 #### **Criterio global 1: Instancia objetos y hacer uso de ellos**
 - **(2.a, 2.b, 2.c, 2.d, 2.f, 2.h, 4.e, 4.f)**: Describe cómo has instanciado y utilizado objetos en tu proyecto. ¿Cómo has aplicado los constructores y pasado parámetros a los métodos? Proporciona ejemplos específicos de tu código.
 
+He instanciado los objetos a traves de las funciones estáticas crearInstancia y los he almacenado en su correspondiente diccionario, he pasado los parámetros a traves de las funciones que solicitan dicho parámetro.
+
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/servicios/ReservaService.kt#L36-L57
+
 #### **Criterio global 2: Crear y llamar métodos estáticos**
 - **(4.h)**: ¿Has definido algún método/propiedad estático en tu proyecto? ¿Cuál era el objetivo y por qué consideraste que debía ser estático en lugar de un método/propiedad de instancia?
+
+Todos los métodos de la clase Consola son estáticos, el objetivo era no instanciar un objeto consola puesto a que no le encontraba el sentido a tener metodos de instancia ya que en mi programa no se iban a instanciar varias consolas.
+
+Métodos estáticos -> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/presentacion/Consola.kt#L14-L189
+
 - **(2.e)**: ¿En qué parte del código se llama a un método estático o se utiliza la propiedad estática?
+
+Se llaman a los métodos estáticos crearInstancia desde ReservaService y desde el main llamo a los métodos estáticos de la clase Consola
+
+Llamadas :
+
+ReservaService --> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/servicios/ReservaService.kt#L36-L57
+
+Main --> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/4b8f2bbe5d6478c6c6c094b24921b681e4a9ff64/src/main/kotlin/Main.kt#L9-L25
 
 #### **Criterio global 3: Uso de entornos**
 - **(2.i)**: ¿Cómo utilizaste el IDE para el desarrollo de tu proyecto? Describe el proceso de creación, compilación, y prueba de tu programa.
 
+He usado las herramientas que me aporta el IDE como debuguear y he usado un plugin para documentar, además de la compilación y la ejecución del programa a través de él.
+
 #### **Criterio global 4: Definir clases y su contenido**
 - **(4.a, 4.b, 4.c, 4.d, 4.g)**: Explica sobre un ejemplo de tu código, cómo definiste las clases en tu proyecto, es decir como identificaste las de propiedades, métodos y constructores y modificadores del control de acceso a métodos y propiedades, para representar al objeto del mundo real. ¿Cómo contribuyen estas clases a la solución del problema que tu aplicación aborda?
+
+Las he definido siguiendo los requisitos impuestos, siguiendo las propiedades y métodos solicitados. Estas clases solucionan las necesidades del sistema.
 
 #### **Criterio global 5: Herencia y uso de clases abstractas e interfaces**
 - **(4.g, 7.a, 7.b, 7.c, 7.i, 7.j)**: Describe sobre tu código cómo has implementado la herencia y/o utilizado interfaces en tu proyecto. ¿Por qué elegiste este enfoque y cómo beneficia a la estructura de tu aplicación? ¿De qué manera has utilizado los principios SOLID para mejorar el diseño de tu proyecto? Mostrando tu código, contesta qué principios has utilizado y qué beneficio has obtenido.
 
+He implementado una clase abstracta y dos subclases que heredan de la clase abstracta, lo elegí puesto que puedo tener las propiedades y los métodos abstractos y en las subclases solo sobreescribirlos. He utilizado el principio de responsabilidad única para mejorar la eficiencia y lógica del programa.
+
 #### **Criterio global 6: Diseño de jerarquía de clases**
 - **(7.d, 7.e, 7.f, 7.g)**: Presenta la jerarquía de clases que diseñaste. ¿Cómo probaste y depuraste esta jerarquía para asegurar su correcto funcionamiento? ¿Qué tipo de herencia has utilizado: Especificación, Especialización, Extensión, Construcción?
+
+Mi jerarquía de clases se basa en Reserva, una clase abstracta y ReservaHotel y ReservaVuelo, dos subclases que sobreescriben las propiedades de la clase padre, he depurado el programa para ver el correcto funcionamiento. Es especialización.
 
 #### **Criterio global 7: Librerías de clases**
 - **(2.g, 4.i)**: Describe cualquier librería externa que hayas incorporado en tu proyecto. Explica cómo y por qué las elegiste, y cómo las incorporaste en tu proyecto. ¿Cómo extendió la funcionalidad de tu aplicación? Proporciona ejemplos específicos de su uso en tu proyecto.
 
+Java LocalDate es una librería que te permite usar las fechas. La escogí porque necesitaba la fecha de los vuelos y reservas, la incorpore obteniendo asi la fecha de instancia del objeto.
+
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/81ce354a7db7a26daa85fa4472cdb067664f5776/src/main/kotlin/servicios/ReservaService.kt#L49
+
 #### **Criterio global 8: Documentado**
 - **(7.h)**: Muestra ejemplos de cómo has documentado y comentado tu código. ¿Que herramientas has utilizado? ¿Cómo aseguras que tu documentación aporte valor para la comprensión, mantenimiento y depuración del código?
+
+He usado el plugin Kdoc para documentar mi código y explicar clases, parámetros y funciones. Gracias a esto aumenta la comprensión y mantenimiento de mi código.
+
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/62f770ae254f62489457c4defa426e3515409f96/src/main/kotlin/dominio/ReservaHotel.kt#L5-L12
 
 #### **Criterio global 9: Genéricos**
 - **(6.f)**: Muestra ejemplos de tu código sobre cómo has implementado una clase con genéricos. ¿Qué beneficio has obtenido?
 
+La clase genérica me permite darle cualquier clave a mi diccionario sin preocupaciones.
+
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/62f770ae254f62489457c4defa426e3515409f96/src/main/kotlin/datos/Repositorio.kt#L6-L20
+
 #### **Criterio global 10: Expresiones Regulares**
 - **(6.g)**: Muestra ejemplos de tu código donde hayas utilizado las expresiones regulares. ¿Qué beneficio has obtenido?
+
+Me permiten validar las entradas por teclado de una forma más eficiente y rápida que con condicionales normales.
+
+--> https://github.com/IES-Rafael-Alberti/2526-u6-6-6-travelbooker-oscargarciajaen/blob/62f770ae254f62489457c4defa426e3515409f96/src/main/kotlin/presentacion/Consola.kt#L187-L201
+
+
 
