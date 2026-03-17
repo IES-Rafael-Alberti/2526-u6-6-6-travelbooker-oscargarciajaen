@@ -99,28 +99,6 @@ class Consola {
             return numeroNoches
         }
 
-        /**
-         * Solicitar fecha
-         *
-         * @return
-         */
-        fun solicitarFecha(): LocalDate{
-            println("Introduce la fecha en formato YYYY-MM-DD")
-
-            var fecha: String? = null
-            do {
-                print("\nTú respuesta -> ")
-                val entrada = readLine()
-                val fecharRegex = "[2][0][2][6]-[0-1][0-9]-[0-3][0-9]".toRegex()
-                if (entrada != null  && entrada.matches(fecharRegex)) {
-                    fecha = entrada
-                }
-            } while(fecha == null)
-
-            val fechaFormateada = LocalDate.parse(fecha)
-
-            return fechaFormateada
-        }
 
         /**
          * Solicita una breve descripción.
@@ -185,7 +163,7 @@ class Consola {
          * @return Retorna la hora introducida por el usuario.
          */
         fun solicitarHoraVuelo():String{
-            val regex = "[0-2][0-9]:[0-5][0-9]".toRegex()
+            val regex = "^([0-1][0-9]|2[0-3]):[0-5][0-9]$".toRegex()
 
             println("Introduzca la hora del vuelo ")
             var horaVuelo: String? = null

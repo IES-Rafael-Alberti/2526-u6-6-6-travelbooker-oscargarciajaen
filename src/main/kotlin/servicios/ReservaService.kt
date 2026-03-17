@@ -5,6 +5,7 @@ import org.practicatrim2.Dominio.ReservaHotel
 import org.practicatrim2.Dominio.ReservaVuelo
 import org.practicatrim2.datos.Repositorio
 import org.practicatrim2.presentacion.Consola
+import java.time.LocalDate
 
 /**
  * Clase que representa un servicio de reservas
@@ -38,14 +39,14 @@ class ReservaService (): IReservaRepository {
             "1" -> reserva = ReservaHotel.crearInstancia(
                 Consola.solicitarUbicacion(),
                 Consola.solicitarNumeroNoches(),
-                Consola.solicitarFecha(),
+                LocalDate.now(),
                 Consola.solicitarDescripción())
 
             "2" -> reserva = ReservaVuelo.crearInstancia(
                 Consola.solicitarOrigen(),
                 Consola.solicitarDestino(),
                 Consola.solicitarHoraVuelo(),
-                Consola.solicitarFecha(),
+                LocalDate.now(),
                 Consola.solicitarDescripción()
             )
         }
